@@ -1,0 +1,17 @@
+name: Test
+
+on: [push]
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: education/autograding-pytest-runner
+        id: runner
+      - name: Show Output
+        shell: bash
+        run: |
+          echo "WE HERE"
+          echo '${{ steps.runner.outputs.result }}'
