@@ -8,7 +8,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: education/autograding-pytest-runner
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+          cache: 'pip' # caching pip dependencies
+      - uses: education/autograding-pytest-runner@main
         id: runner
       - name: Show Output
         shell: bash
