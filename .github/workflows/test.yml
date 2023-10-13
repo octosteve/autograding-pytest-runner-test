@@ -8,10 +8,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: education/autograding-pytest-runner@docker
+      - uses: octosteve/python-test-runner@add-additional-info
         id: runner
-        env:
-          GITHUB_TOKEN: ${{github.token}}
       - name: Show Output
         shell: bash
         run: |
