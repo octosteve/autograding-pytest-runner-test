@@ -14,5 +14,4 @@ jobs:
         shell: bash
         run: |
           echo "WE HERE"
-          result_decoded=$(echo "${{ steps.runner.outputs.result }}" | jq -rR @uri)
-          echo "$result_decoded"
+          echo "${{ steps.runner.outputs.result }}" | base64 -d
